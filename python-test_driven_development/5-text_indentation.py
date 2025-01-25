@@ -1,23 +1,25 @@
 #!/usr/bin/python3
-"""
-This is the function about  5-text_indentation.py
-"""
+"""defines function to print text with 2 newlines after '.' '?' or ':' chars"""
 
 
 def text_indentation(text):
-    '''Function that a text with 2 new lines
-    after each of these characters: .,? and :
-    '''
-    if isinstance(text, str):
+    """prints text with 2 newlines after '.' '?' or ':' chars"""
+    if type(text) is not str:
         raise TypeError("text must be a string")
-
-    i = 0
-    len_text = len(text)
-    while i < len_text:
-        if text[i] in ('.', '?', ':'):
-            print("{}\n".format(text[i]))
-            while i + 1 < len_text and text[i + 1] == " ":
-                i += 1
+    previous = ""
+    for char in text:
+        # leading whitespace
+        if char is " " and char is text[0] and previous is "":
+            previous = "\n"
+            continue
+        # whitespaces after newline
+        if char is " " and previous is "\n":
+            continue
+        # matching character, print char, print newlines
+        if char is "." or char is "?" or char is ":":
+            print(char)
+            print()
+            previous = "\n"
         else:
-            print(text[i], end='')
-        i += 1
+            print(char, end="")
+            previous = char
