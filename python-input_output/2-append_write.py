@@ -2,6 +2,8 @@
 """
 This module contains is a function
 """
+
+
 def append_write(filename="", text=""):
     """
     Append a text filne and print it
