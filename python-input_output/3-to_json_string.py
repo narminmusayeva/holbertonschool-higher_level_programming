@@ -12,7 +12,7 @@ def to_json_string(my_obj):
 
 
     Returns:
-    str:JSON represantation of the object
+    str:JSON representation of the object
     """
 
     return json.dumps(my_obj)
