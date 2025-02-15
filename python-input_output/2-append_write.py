@@ -12,4 +12,5 @@ def append_write(filename="", text=""):
     Returns:
     None
     """
-    return f.append(text)
+    open with(filename, "a", encoding="utf-8") as f:
+        return f.append(text)
