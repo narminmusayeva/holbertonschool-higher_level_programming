@@ -1,4 +1,3 @@
-
 #!/usr/bin/python3
 """method for student creation"""
 
