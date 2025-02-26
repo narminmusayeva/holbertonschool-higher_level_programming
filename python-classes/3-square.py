@@ -1,6 +1,7 @@
 #!/usr/bin/python3
 """This module defines a square class that calculates the area of a square."""
 
+
 class Square:
     """Represents a square with private size attribute"""
 
