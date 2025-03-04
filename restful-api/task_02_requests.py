@@ -33,3 +33,5 @@ def fetch_and_save_posts():
         else:
             print(f"Failed to fetch data: {res.status_code}")
 
+fetch_and_print_posts()
+fetch_and_save_posts()
