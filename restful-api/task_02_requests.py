@@ -2,6 +2,7 @@ import requests
 import csv
 
 res=requests.get("https://jsonplaceholder.typicode.com/posts/")
+print(f"Status Code: {res.status_code}")
 
 def fetch_and_print_posts():
     if res.status_code == 200:
@@ -10,7 +11,8 @@ def fetch_and_print_posts():
             title = key['title']
             print(title)
     else:
-        print(f"Status Code: {res.status_code}")
+        print(f"Failed to fetch data: {res.status_code}")
+
 
 
 def fetch_and_save_posts():
