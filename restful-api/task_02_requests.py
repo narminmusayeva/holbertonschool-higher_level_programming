@@ -10,7 +10,7 @@ def fetch_and_print_posts():
             title = key['title']
             print(title)
     else:
-        print(res.status_code)
+        print(f"Status Code: {res.status_code}")
 
 
 def fetch_and_save_posts():
@@ -27,5 +27,7 @@ def fetch_and_save_posts():
                         title = key['title']
                         body = key['body']
                         writer.writerow({'id':id, 'title':title, 'body':body})
+                print("CSV file created successfully.")
         else:
-            print(res.status_code)
+            print(f"Failed to fetch data: {res.status_code}")
+
