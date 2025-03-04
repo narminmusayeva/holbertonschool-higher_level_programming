@@ -29,10 +29,3 @@ def fetch_and_save_posts():
                         writer.writerow({'id':id, 'title':title, 'body':body})
         else:
             print(res.status_code)
-
-
-
-
-
-fetch_and_print_posts()
-fetch_and_save_posts()
