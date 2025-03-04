@@ -1,1 +1,1 @@
-This project is about RESTFULApi.
+This project is about RestfulApi.
