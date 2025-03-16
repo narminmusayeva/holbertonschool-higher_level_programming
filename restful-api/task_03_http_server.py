@@ -32,12 +32,12 @@ class SimpleRequestHandler(http.server.BaseHTTPRequestHandler):
             
         else:
             self.send_response(HTTPStatus.NOT_FOUND)
-            self.send_header('Content-type', 'application/json')
+            self.send_header('Content-type', 'text/plain')
             self.end_headers()
-            error_message = {"error": "Endpoint not found"}
-            self.wfile.write(json.dumps(error_message).encode('utf-8'))
+            self.wfile.write(b"Endpoint not found")
 
-# http.server.HTTPServer(('', 8000), SimpleRequestHandler).serve_forever()
+
+        
 httpd = http.server.HTTPServer(('', 8000), SimpleRequestHandler)
 print("Server running on http://localhost:8000")
 httpd.serve_forever()
